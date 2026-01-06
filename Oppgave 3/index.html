@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 3 - To-do liste</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Oppgave 3 - To-do liste</h1>
+    </header>
+    <div class="main">
+        <form>
+            <input type="text" id="textInput" name="todoListTextInput">
+            <button type="submit" id="todoListAddButton">Add</button>
+        </form>
+        <span id="errorText">Can't add empty text</span>
+        <ul id="todoList">
+            <li id="listItem1" class="checked">
+                <span>Mate katten</span>
+                <input type="checkbox">
+                <button>X</button>
+            </li>
+            <li id="listItem2" class="checked">
+                <span>Dummy text</span>
+                <input type="checkbox">
+                <button>X</button>
+            </li>
+            <li id="listItem3">
+                <span>Dummy text</span>
+                <input type="checkbox">
+                <button>X</button>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
