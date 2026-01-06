@@ -40,7 +40,6 @@ header {
     margin-top: 3.5em;
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
     width: 100%;
     align-items: center;
 }
@@ -69,6 +68,14 @@ header {
     border-color: var(--text-color);
 }
 
+div.main form.error input {
+    border-color: var(--red-accent-color);
+}
+div.main form.error button {
+    background-color: var(--red-accent-color);
+    color: var(--base-color-lighter);
+}
+
 .main form button {
     height: 50px;
     flex: 0 0 auto;
@@ -94,14 +101,15 @@ header {
     color: var(--base-color-lighter);
 }
 
-#errorText {
+#error-message {
+    margin-top: 0.5em;
     color: var(--red-accent-color-hover);
     font-size: 1.2rem;
     font-weight: 500;
-    display: none;
 }
 
 .main ul {
+    margin-top: 2em;
     width: 65%;
     background-color: var(--base-color);
     box-sizing: border-box;

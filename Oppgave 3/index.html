@@ -12,27 +12,18 @@
         <h1>Oppgave 3 - To-do liste</h1>
     </header>
     <div class="main">
-        <form>
-            <input type="text" id="textInput" name="todoListTextInput">
-            <button type="submit" id="todoListAddButton">Add</button>
+        <form id="form">
+            <input type="text" id="text-input" name="text-input" placeholder="Add new to-do">
+            <button type="submit">Add</button>
         </form>
-        <span id="errorText">Can't add empty text</span>
-        <ul id="todoList">
-            <li id="listItem1" class="checked">
-                <span>Mate katten</span>
+        <span id="error-message"></span>
+        <ul id="list">
+            <!-- template for to-do items
+            <li>
+                <span> to-do text</span>
                 <input type="checkbox">
                 <button>X</button>
-            </li>
-            <li id="listItem2" class="checked">
-                <span>Dummy text</span>
-                <input type="checkbox">
-                <button>X</button>
-            </li>
-            <li id="listItem3">
-                <span>Dummy text</span>
-                <input type="checkbox">
-                <button>X</button>
-            </li>
+            </li> -->
         </ul>
     </div>
 </body>
