@@ -44,12 +44,25 @@ body {
     width: 100%;
 }
 
+.stacking-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+}
+
+.lines-container {
+    display: grid;
+    width: 100%;
+
+}
+
 .container {
     display: grid;
     grid-template-columns: 50px 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
-    "box-3 box-1"
+    "box-1 box-1"
     "box-3 box-2";
     width: 100%;
     background-color: var(--base-color-light);  
@@ -60,8 +73,8 @@ body {
 .header-days {
     list-style: none;
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
-    gap: 1em;
+    grid-template-columns: 50px 100px 100px 100px 100px 100px 100px 100px;
+    gap: 10px;
 }
 
 .header-days li {
@@ -69,32 +82,44 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 0.5em;
     aspect-ratio: 2 / 1;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
+.header-days > :first-child {
+    font-size: 1em;
+    font-weight: 400;
+    justify-content: flex-end;
+    aspect-ratio: initial;
+}
+
 .days {
     list-style: none;
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
-    gap: 1em;
+    grid-template-columns: 110px 110px 110px 110px 110px 110px 110px;
+    margin-left: 5px;
 }
 
 .days li {
     height: 500px;
+    border: 1px solid gray;
 }
 
 .times {
     list-style: none;
     display: grid;
+    justify-content: center;
+    align-items: flex-end;
     grid-template-rows: auto 100px 100px 100px 100px 100px;
 }
 
 .times li {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 
