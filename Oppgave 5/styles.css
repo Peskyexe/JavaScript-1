@@ -1,0 +1,124 @@
+/* Variabler for alle fargene mine, gjør det letter å fin justere farger.
+(--dm- står for dark mode )*/
+:root {
+    --accent-color: hsl(120, 45%, 50%);
+    --accent-color-hover: hsl(120, 45%, 40%);
+    --accent-color-active: hsl(120, 45%, 30%);
+    --base-color: hsl(0, 0%, 90%);
+    --base-color-light: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 23%);
+
+    --dm-accent-color: hsl(120, 45%, 50%);
+    --dm-accent-color-hover: hsl(120, 45%, 40%);
+    --dm-accent-color-active: hsl(120, 45%, 30%);
+    --dm-base-color: hsl(223, 8%, 17%);
+    --dm-base-color-light: hsl(225, 8%, 22%);
+    --dm-text-color: hsl(211, 14%, 72%);
+}
+
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bruker flexbox her for å sentrere alt sammen */
+body {
+    background-color: var(--base-color-dark);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Noe små greier for oppgave tittelen */
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+/* Bruker Grid for å få den plasseringen jeg vil ha */
+.main {
+    margin-top: 3em;
+    width: 70%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+    "box-2 box-3"
+    "box-1 box-1";
+    gap: 1em;
+    justify-content: center;
+}
+
+/* Velger theme knappen sin parent */
+.main > :first-child {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+/* Velger theme knappen */
+.main > :first-child button {
+    font-size: 1.1em;
+    font-weight: 400;
+    padding: 0.5em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--accent-color);
+    color: var(--base-color-light);
+    transition: 0.2s ease;
+}
+
+/* Farge effekts for når du holder musa over, eller trykker på knappen */
+.main > :first-child button:hover {
+    background-color: var(--accent-color-hover);
+}
+.main > :first-child button:active {
+    background-color: var(--accent-color-active);
+}
+
+/* Velger de 2 hoved boksene med tekst */
+.text-container {
+    padding: 2em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.text-container h3 {
+    text-align: center;
+}
+
+/* Light mode klassene */
+.light-mode-base {
+    background-color: var(--base-color);
+}
+
+.light-mode-base-light {
+    background-color: var(--base-color-light);
+}
+
+.light-mode-text {
+    color: var(--text-color);
+}
+
+/* Dark mode klassene */
+.dark-mode-base {
+    background-color: var(--dm-base-color);
+}
+
+.dark-mode-base-light {
+    background-color: var(--dm-base-color-light);
+}
+
+.dark-mode-text {
+    color: var(--dm-text-color);
+}

@@ -1,0 +1,83 @@
+:root {
+    --accent-color: hsl(120, 45%, 50%);
+    --accent-color-hover: hsl(120, 45%, 40%);
+    --accent-color-active: hsl(120, 45%, 30%);
+    --base-color-dark: hsl(0, 0%, 90%);
+    --base-color: hsl(0, 0%, 95%);
+    --base-color-light: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 23%);
+    --text-color-light: hsl(0, 0%, 70%);
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--base-color-dark);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    border-radius: 3em;
+    box-sizing: border-box;
+    padding: 4em;
+    background-color: var(--base-color);
+}
+
+.container {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 100%;
+}
+
+.container ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 140px);
+    gap: 1em;
+}
+
+.container ul li {
+    background-color: var(--base-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.filler-days {
+    color: var(--text-color-light);
+}
+
+@media (max-width: 1690px) {
+    .header-days li:last-child {
+        display: none;
+    }
+}
+
+@media (max-width: 1510px) {
+    .header-days li:nth-last-child(2) {
+        display: none;
+    }
+}
