@@ -15,6 +15,8 @@
     --warning: oklch(0.5 0.05 100);
     --success: oklch(0.5 0.05 160);
     --info: oklch(0.5 0.05 260);
+
+    --shadow: 0px 2px 2px oklch(0 0 0 / 0.2), 0px 4px 4px oklch(0 0 0 / 0.1);
 }
 
 /* Resetter alt til 0 margin, 0 padding og 'border-box' box-sizing, det gjør det lettere å style nettsiden */
@@ -29,10 +31,11 @@
 /* Bruker flexbox her for å sentrere alt sammen */
 body {
     background-color: var(--bg-dark);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    scroll-behavior: smooth;
 }
 
 /* Noe små greier for oppgave tittelen */
@@ -43,19 +46,51 @@ header {
 }
 
 .main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
     list-style: none;
-    max-width: 90vw;
-    margin: auto;
+    max-width: 80%;
+    margin: 3em auto 7em auto;
     justify-items: center;
     align-items: center;
+}
+
+.image-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 1em 0.75em 1em;
+    background-color: var(--bg);
+    border: 2px solid var(--bg);
+    border-top: 2px solid var(--highlight);
+    box-shadow: var(--shadow);
+    border-radius: 2em;
+    transition: 0.2s ease;
+    width: 70%;
+}
+
+.image-card:hover {
+    background-color: var(--bg-light);
+    border-color: var(--bg);
 }
 
 .image-card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
+.image-card span {
+    margin-top: 0.75em;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.image-card p {
+    font-size: 0.8em;
+    text-align: center;
+    color: var(--text-muted);
+}
