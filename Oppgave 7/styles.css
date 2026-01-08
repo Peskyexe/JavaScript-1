@@ -1,0 +1,61 @@
+/* Variabler for alle fargene mine, gjør det letter å fin justere farger.*/
+/* Lagde farge pallete med denne nettsiden: https://www.iamsajid.com/ui-colors/ */
+:root {
+    --bg-dark: oklch(0.92 0.015 274);
+    --bg: oklch(0.96 0.015 274);
+    --bg-light: oklch(1 0.015 274);
+    --text: oklch(0.15 0.03 274);
+    --text-muted: oklch(0.4 0.03 274);
+    --highlight: oklch(1 0.03 274);
+    --border: oklch(0.6 0.03 274);
+    --border-muted: oklch(0.7 0.03 274);
+    --primary: oklch(0.4 0.1 274);
+    --secondary: oklch(0.4 0.1 94);
+    --danger: oklch(0.5 0.05 30);
+    --warning: oklch(0.5 0.05 100);
+    --success: oklch(0.5 0.05 160);
+    --info: oklch(0.5 0.05 260);
+}
+
+/* Resetter alt til 0 margin, 0 padding og 'border-box' box-sizing, det gjør det lettere å style nettsiden */
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bruker flexbox her for å sentrere alt sammen */
+body {
+    background-color: var(--bg-dark);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Noe små greier for oppgave tittelen */
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1em;
+    list-style: none;
+    max-width: 90vw;
+    margin: auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+

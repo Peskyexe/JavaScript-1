@@ -1,16 +1,26 @@
 /* Variabler for alle fargene mine, gjør det letter å fin justere farger.*/
+/* Lagde farge pallete med denne nettsiden: https://www.iamsajid.com/ui-colors/ */
 :root {
-    --accent-color: hsl(120, 45%, 50%);
-    --accent-color-hover: hsl(120, 45%, 40%);
-    --accent-color-active: hsl(120, 45%, 30%);
-    --base-color: hsl(0, 0%, 90%);
-    --base-color-light: hsl(0, 0%, 95%);
-    --text-color: hsl(0, 0%, 23%);
+    --bg-dark: oklch(0.92 0 85);
+    --bg: oklch(0.96 0 85);
+    --bg-light: oklch(1 0 85);
+    --text: oklch(0.25 0 85);
+    --text-muted: oklch(0.4 0 85);
+    --highlight: oklch(1 0 85);
+    --border: oklch(0.6 0 85);
+    --border-muted: oklch(0.7 0 85);
+    --primary: oklch(0.4 0.1 85);
+    --secondary: oklch(0.4 0.1 265);
+    --danger: oklch(0.5 0.05 30);
+    --warning: oklch(0.5 0.05 100);
+    --success: oklch(0.5 0.05 160);
+    --info: oklch(0.5 0.05 260);
 }
 
+/* Resetter alt til 0 margin, 0 padding og 'border-box' box-sizing, det gjør det lettere å style nettsiden */
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-color);
+    color: var(--text);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -18,7 +28,7 @@
 
 /* Bruker flexbox her for å sentrere alt sammen */
 body {
-    background-color: var(--base-color-dark);
+    background-color: var(--bg-dark);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -32,58 +42,55 @@ header {
     margin-top: 1em;
 }
 
-/* Bruker Grid for å få den plasseringen jeg vil ha */
 .main {
+    background-color: var(--bg);
     margin-top: 3em;
-    width: 70%;
-    height: 80%;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr auto;
-    grid-template-areas: 
-    "box-2 box-3"
-    "box-1 box-1";
-    gap: 1em;
-    justify-content: center;
+    padding: 1.25em;
+    border-radius: 1.25em;
 }
 
-/* Velger theme knappen sin parent */
-.main > :first-child {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.text-container textarea {
+    width: 1000px;
+    height: 200px;
+    border-radius: 16px;
+    border-width: 3px;
+    padding: 16px;
+    resize: none;
+    background-color: var(--bg-light);
+}
+
+/* Farge effekter til tekst felte får når du har muse pekeren over, eller når du skriver */
+.text-container textarea:hover { border-color: var(--info); }
+.text-container textarea:focus { border-color: var(--text-muted); }
+
+.settings-container {
     margin-top: 1em;
+    display: flex;
+    gap: 2em;
 }
 
-/* Velger theme knappen */
-.main > :first-child button {
-    font-size: 1.1em;
-    font-weight: 400;
-    padding: 0.5em;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--accent-color);
-    color: var(--base-color-light);
-    transition: 0.2s ease;
-}
-
-/* Farge effekts for når du holder musa over, eller trykker på knappen */
-.main > :first-child button:hover {
-    background-color: var(--accent-color-hover);
-}
-.main > :first-child button:active {
-    background-color: var(--accent-color-active);
-}
-
-/* Velger de 2 hoved boksene med tekst */
-.text-container {
-    padding: 2em;
-    border-radius: 1em;
+.settings-container div {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 0.25em;
 }
 
-.text-container h3 {
-    text-align: center;
+.settings-container label {
+    color: var(--text-muted);
+}
+
+.settings-container select {
+    border-radius: 0.75em;
+    padding: 0.25em;
+    background-color: var(--info);
+    color: var(--bg-light);
+}
+
+/* Farge effekter for dropdown menyene til når du har muse pekeren over, eller velger en ny setting. 
+   Endrer også border radius når du velger ny setting til å være firkanta på bunn */    
+.settings-container select:hover { background-color: var(--secondary); }
+.settings-container select:open { background-color: var(--text-muted); border-radius: 0.75em 0.75em 0 0; }
+
+.settings-container option {
+    color: var(--bg-light);
 }

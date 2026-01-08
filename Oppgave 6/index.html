@@ -12,11 +12,46 @@
         <h1>Oppgave 6 - Live Tekstredigerer</h1>
     </header>
     <div class="main">
-        <div>
-
+        <div class="text-container">
+            <textarea name="text-field" id="text-field"></textarea>
         </div>
-        <div>
-
+        <div class="settings-container">
+            <div>
+                <label for="fontSize">Font Size</label>
+                <select name="font-size" id="fontSize">
+                    <option value="9px">9px</option>
+                    <option value="11px">11px</option>
+                    <option value="12px">12px</option>
+                    <option value="14px" selected>14px</option>
+                    <option value="16px">16px</option>
+                    <option value="20px">20px</option>
+                    <option value="24px">24px</option>
+                    <option value="30px">30px</option>
+                </select>
+            </div>
+            <div>
+                <label for="fontFamily">Font Family</label>
+                <select name="font-family" id="fontFamily">
+                    <option value="sans-serif">Sans Serif</option>
+                    <option value="Arial">Arial</option>
+                    <option value="'Segoe UI'" selected>Segoe UI</option>
+                    <option value="'Times New Roman'">Times New Roman</option>
+                </select>
+            </div>
+            <div>
+                <label for="fontWeight">Font Weight</label>
+                <select name="font-weight" id="fontWeight">
+                    <option value="normal" selected>Normal</option>
+                    <option value="bold">Bold</option>
+                </select>
+            </div>
+            <div>
+                <label for="fontStyle">Font Style</label>
+                <select name="font-style" id="fontStyle">
+                    <option value="normal" selected>Normal</option>
+                    <option value="italic">Italic</option>
+                </select>
+            </div>
         </div>
     </div>
 </body>
