@@ -1,25 +1,48 @@
-/* Variabler for alle fargene mine, gjør det letter å fin justere farger.
-(--dm- står for dark mode )*/
-:root {
-    --accent-color: hsl(120, 45%, 50%);
-    --accent-color-hover: hsl(120, 45%, 40%);
-    --accent-color-active: hsl(120, 45%, 30%);
-    --base-color: hsl(0, 0%, 90%);
-    --base-color-light: hsl(0, 0%, 95%);
-    --text-color: hsl(0, 0%, 23%);
 
-    --dm-accent-color: hsl(120, 45%, 50%);
-    --dm-accent-color-hover: hsl(120, 45%, 40%);
-    --dm-accent-color-active: hsl(120, 45%, 30%);
-    --dm-base-color: hsl(223, 8%, 17%);
-    --dm-base-color-light: hsl(225, 8%, 22%);
-    --dm-text-color: hsl(211, 14%, 72%);
+:root {
+/* Variabler for alle fargene mine, gjør det letter å fin justere farger.*/
+/* Lagde farge pallete med denne nettsiden: https://www.iamsajid.com/ui-colors/ */
+    --bg-dark: oklch(0.1 0.03 273);
+    --bg: oklch(0.15 0.03 273);
+    --bg-light: oklch(0.2 0.03 273);
+    --text: oklch(0.96 0.06 273);
+    --text-muted: oklch(0.76 0.06 273);
+    --highlight: oklch(0.5 0.06 273);
+    --border: oklch(0.4 0.06 273);
+    --border-muted: oklch(0.3 0.06 273);
+    --primary: oklch(0.76 0.1 273);
+    --secondary: oklch(0.76 0.1 93);
+    --danger: oklch(0.7 0.06 30);
+    --warning: oklch(0.7 0.06 100);
+    --success: oklch(0.7 0.06 160);
+    --info: oklch(0.7 0.06 260);
+
+    /* Variabeler for andre effekter, fikk også dem fra den samme nettsiden */
+    --shadow: 0px 2px 2px oklch(0 0 0 / 0.2), 0px 4px 4px oklch(0 0 0 / 0.1);
+}
+
+/* Light mode farger */
+body.light {
+    --bg-dark: oklch(0.92 0.03 273);
+    --bg: oklch(0.96 0.03 273);
+    --bg-light: oklch(1 0.03 273);
+    --text: oklch(0.15 0.06 273);
+    --text-muted: oklch(0.4 0.06 273);
+    --highlight: oklch(1 0.06 273);
+    --border: oklch(0.6 0.06 273);
+    --border-muted: oklch(0.7 0.06 273);
+    --primary: oklch(0.4 0.1 273);
+    --secondary: oklch(0.4 0.1 93);
+    --danger: oklch(0.5 0.06 30);
+    --warning: oklch(0.5 0.06 100);
+    --success: oklch(0.5 0.06 160);
+    --info: oklch(0.5 0.06 260);
 }
 
 
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-color);
+    color: var(--text);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -27,18 +50,18 @@
 
 /* Bruker flexbox her for å sentrere alt sammen */
 body {
-    background-color: var(--base-color-dark);
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--bg-dark);
 }
 
 /* Noe små greier for oppgave tittelen */
 header {
     display: flex;
     justify-content: center;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 /* Bruker Grid for å få den plasseringen jeg vil ha */
@@ -50,14 +73,34 @@ header {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr auto;
     grid-template-areas: 
-    "box-2 box-3"
-    "box-1 box-1";
+    "box-1 box-2"
+    "box-3 box-3";
     gap: 1em;
     justify-content: center;
+    background-color: var(--bg);
+    padding: 2em;
+    border-radius: 2em;
+}
+
+
+/* Velger de 2 hoved boksene med tekst */
+.text-container {
+    background-color: var(--bg-light);
+    padding: 2em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    border-top: 1px solid var(--highlight);
+    box-shadow: var(--shadow);
+}
+
+.text-container span {
+    color: var(--text-muted);
 }
 
 /* Velger theme knappen sin parent */
-.main > :first-child {
+.button-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -65,60 +108,21 @@ header {
 }
 
 /* Velger theme knappen */
-.main > :first-child button {
+.button-container button {
     font-size: 1.1em;
     font-weight: 400;
-    padding: 0.5em;
+    padding: 0.5em 1em;
     border: none;
     border-radius: 10px;
-    background-color: var(--accent-color);
-    color: var(--base-color-light);
-    transition: 0.2s ease;
+    background-color: var(--primary);
+    color: var(--bg);
+    transition: 0.15s ease;
 }
 
 /* Farge effekts for når du holder musa over, eller trykker på knappen */
-.main > :first-child button:hover {
-    background-color: var(--accent-color-hover);
+.button-container button:hover {
+    background-color: var(--secondary);
 }
-.main > :first-child button:active {
-    background-color: var(--accent-color-active);
-}
-
-/* Velger de 2 hoved boksene med tekst */
-.text-container {
-    padding: 2em;
-    border-radius: 1em;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-}
-
-.text-container h3 {
-    text-align: center;
-}
-
-/* Light mode klassene */
-.light-mode-base {
-    background-color: var(--base-color);
-}
-
-.light-mode-base-light {
-    background-color: var(--base-color-light);
-}
-
-.light-mode-text {
-    color: var(--text-color);
-}
-
-/* Dark mode klassene */
-.dark-mode-base {
-    background-color: var(--dm-base-color);
-}
-
-.dark-mode-base-light {
-    background-color: var(--dm-base-color-light);
-}
-
-.dark-mode-text {
-    color: var(--dm-text-color);
-}
+.button-container button:active {
+    background-color: var(--primary);
+} 
