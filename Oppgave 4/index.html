@@ -8,68 +8,41 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-    <div class="main">
+    <header>
         <h1>Oppgave 4 - Kalender</h1>
-        <div class="current-time-container">
-            <span id="local-time">15:41</span>
-            <p id="current-date">Januar, 2026</p>
-        </div>
-        <div class="stacking-container">
-            <div class="container">
-                <ul class="header-days" style="grid-area: box-1">
-                    <li>04:00</li>
-                    <li id="day-1-header">
-                        <span>Søndag</span>
-                        <span>7</span>
-                    </li>
-                    <li id="day-2-header">
-                        <span>Mandag</span>
-                        <span>8</span>
-                    </li>
-                    <li id="day-3-header">
-                        <span>Tirsdag</span>
-                        <span>9</span>
-                    </li>
-                    <li id="day-4-header">
-                        <span>Ønsdag</span>
-                        <span>10</span>
-                    </li>
-                    <li id="day-5-header">
-                        <span>Tørsdag</span>
-                        <span>11</span>
-                    </li>
-                    <li id="day-6-header">
-                        <span>Fredag</span>
-                        <span>12</span>
-                    </li>
-                    <li id="day-7-header">
-                        <span>Lørdag</span>
-                        <span>13</span>
-                    </li>
-                </ul>
-                <ul class="days" style="grid-area: box-2">
-                    <li id="day-1"></li>
-                    <li id="day-2"></li>
-                    <li id="day-3"></li>
-                    <li id="day-4"></li>
-                    <li id="day-5"></li>
-                    <li id="day-6"></li>
-                    <li id="day-7"></li>
-                </ul>
-                <ul class="times" style="grid-area: box-3">
-                    <li></li>
-                    <li>08:00</li>
-                    <li>12:00</li>
-                    <li>16:00</li>
-                    <li>20:00</li>
-                    <li>24:00</li>
-                </ul>
+    </header>
+    <div class="container">
+        <div class="calendar">
+            <div class="day" onclick="addEvent('day-1')">
+                <span>1</span>
+                <ul id="day-1"></ul>
             </div>
-            <div class="lines-container">
-
+            <div class="day" onclick="addEvent('day-2')">
+                <span>2</span>
+                <ul id="day-2"></ul>
+            </div>
+            <div class="day" onclick="addEvent('day-3')">
+                <span>3</span>
+                <ul id="day-3"></ul>
+            </div>
+            <div class="day" onclick="addEvent('day-4')">
+                <span>4</span>
+                <ul id="day-4"></ul>
+            </div>
+            <div class="day" onclick="addEvent('day-5')">
+                <span>5</span>
+                <ul id="day-5"></ul>
+            </div>
+            <div class="day" onclick="addEvent('day-6')">
+                <span>6</span>
+                <ul id="day-6"></ul>
+            </div>
+            <div class="day" onclick="addEvent('day-7')">
+                <span>7</span>
+                <ul id="day-7"></ul>
             </div>
         </div>
-        
     </div>
+
 </body>
 </html>
