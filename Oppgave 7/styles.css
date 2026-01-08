@@ -73,6 +73,7 @@ header {
 .image-card:hover {
     background-color: var(--bg-light);
     border-color: var(--bg);
+    z-index: 1;
 }
 
 .image-card img {
