@@ -63,6 +63,10 @@ header {
     background-color: var(--bg);
     border-top: 1px solid var(--highlight);
     box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
 }
 
 #drop-zone {
